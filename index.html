@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, Babuji!</title>
+    <style>
+      :root {
+        --bg: #fff6ef;
+        --card: #ffffffd9;
+        --text: #3f2a39;
+        --accent: #ff5e7d;
+        --accent-2: #ffb86b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #fffaf5, var(--bg));
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      .glow,
+      .glow::after {
+        position: fixed;
+        width: 16rem;
+        height: 16rem;
+        border-radius: 999px;
+        filter: blur(16px);
+        z-index: 0;
+        opacity: 0.35;
+        animation: drift 10s ease-in-out infinite alternate;
+      }
+
+      .glow {
+        top: 3rem;
+        left: -5rem;
+        background: var(--accent);
+      }
+
+      .glow::after {
+        content: "";
+        bottom: -18rem;
+        left: 70vw;
+        background: var(--accent-2);
+        animation-duration: 14s;
+      }
+
+      @keyframes drift {
+        from {
+          transform: translateY(0) translateX(0);
+        }
+        to {
+          transform: translateY(20px) translateX(24px);
+        }
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        width: min(1060px, 92vw);
+        margin: 0 auto;
+        padding: 3rem 0 4rem;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #ffffffd6, #fff4e5dc);
+        border: 1px solid #ffd8cc;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px #e9708e22;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+      }
+
+      .hero-content {
+        padding: clamp(1.5rem, 3vw, 3rem);
+      }
+
+      .tag {
+        display: inline-block;
+        background: #ffe5d6;
+        color: #a64a57;
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.3rem);
+        line-height: 1.1;
+      }
+
+      .lead {
+        margin: 1rem 0 0;
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .message,
+      .gallery {
+        margin-top: 1.5rem;
+        background: var(--card);
+        border: 1px solid #ffd8cc;
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 12px 28px #e9708e1a;
+      }
+
+      .message h2,
+      .gallery h2 {
+        margin-top: 0;
+      }
+
+      .photos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .photo {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #ffd8cc;
+      }
+
+      .photo img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .photo:hover img {
+        transform: scale(1.04);
+      }
+
+      .footer-note {
+        margin-top: 1rem;
+        text-align: center;
+        color: #875167;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-media {
+          max-height: 380px;
+        }
+
+        .photos {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="tag">A special surprise for tomorrow ✨</span>
+          <h1>Happy Birthday in advance, Babuji! 🎉</h1>
+          <p class="lead">
+            To my best friend — thank you for your laughter, your kindness, and all
+            the memories we have made together. May this birthday bring you endless
+            happiness, success, and unforgettable moments.
+          </p>
+        </div>
+        <div class="hero-media">
+          <img src="./images/babuji-1.jpg" alt="Babuji smiling in a special memory" />
+        </div>
+      </section>
+
+      <section class="message">
+        <h2>From the heart 💌</h2>
+        <p>
+          Babuji, you are more than a friend — you are family. Life is brighter
+          with you in it. I hope every dream you carry turns into reality this year,
+          and every day gives you one more reason to smile.
+        </p>
+      </section>
+
+      <section class="gallery">
+        <h2>Our favorite moments 📸</h2>
+        <div class="photos">
+          <figure class="photo">
+            <img src="./images/babuji-1.jpg" alt="Birthday memory with Babuji photo 1" />
+          </figure>
+          <figure class="photo">
+            <img src="./images/babuji-2.jpg" alt="Birthday memory with Babuji photo 2" />
+          </figure>
+          <figure class="photo">
+            <img src="./images/babuji-3.jpg" alt="Birthday memory with Babuji photo 3" />
+          </figure>
+        </div>
+      </section>
+
+      <p class="footer-note">Made with love for the best friend ever ❤️</p>
+    </main>
+  </body>
+</html>
